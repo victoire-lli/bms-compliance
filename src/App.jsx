@@ -56,8 +56,8 @@ function riskMeta(level) {
 async function callClaude(messages, maxTokens) {
   const mt = maxTokens || 1500;
   const body = Array.isArray(messages)
-    ? {model:"claude-sonnet-4-20250514",max_tokens:mt,messages}
-    : {model:"claude-sonnet-4-20250514",max_tokens:mt,messages:[{role:"user",content:messages}]};
+    ? {model:"claude-sonnet-4-6",max_tokens:mt,messages}
+    : {model:"claude-sonnet-4-6",max_tokens:mt,messages:[{role:"user",content:messages}]};
   const res = await fetch("/api/claude", {
     method:"POST",
     headers:{"Content-Type":"application/json"},
