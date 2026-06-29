@@ -926,7 +926,7 @@ function FormView(props) {
     lines.push("- Contact alimentaire : Règlement CE 10/2011, CE 1935/2004.");
     lines.push("must_have 10 max, nice_to_have 4 max, customer_risks 5 max, product_recalls 3 max. Français simple.");
     var prompt=lines.join("\n");
-    callClaude(prompt,7000).then(function(txt){
+    callClaude(prompt,4000).then(function(txt){
       var raw=JSON.parse(repairJSON(txt));
       var normKey=function(s){return (s||"").toLowerCase().replace(/\s*\([^)]*\)/g,"").replace(/\s+/g," ").trim();};
       var dedup=function(arr){var seen=new Set();return (arr||[]).filter(function(n){var k=normKey(n.norm||n.description||"");if(seen.has(k))return false;seen.add(k);return true;});};
